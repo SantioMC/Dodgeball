@@ -1,0 +1,33 @@
+# The main spawn point of the server
+spawn: world;-3;64;-12
+
+# The y coordinate before snowballs are removed
+lowest_y: 55
+
+# List of commands to execute once a team wins, available placeholders:
+# (The commands also support PlaceholderAPI if installed)
+# %team% - The team that won
+# %winners% - The players on the winning team
+# %losers% - The players on the losing team
+# %winner% - A player that won, if specified the command will run once for each player
+# %loser% - A player that lost, if specified the command will run once for each player
+# The team specifiers will only apply to players who are alive
+win_commands:
+  - "minecraft:msg %winner% You won!"
+
+# List of games, use game 1 as a template,
+# locations are formatted as: world;x;y;z[;pitch[;yaw]]
+
+games:
+  game_1:
+    name: Game 1
+    max_players: 20
+
+    lobby: world;-1;76;24
+    red_spawn: world;-1;65;38;180
+    blue_spawn: world;-1;65;11
+
+    powerups:
+      left_bound: world;-15;0;43
+      right_bound: world;12;0;4
+      drop_height: 70
