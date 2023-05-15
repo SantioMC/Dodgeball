@@ -62,7 +62,7 @@ public class PlayerListener implements Listener {
     
     @EventHandler(priority = EventPriority.HIGHEST)
     private void onPlayerQuit(PlayerQuitEvent event) {
-        event.setQuitMessage(event.getPlayer().getDisplayName() + " §7left the game!");
+        event.setQuitMessage("§7" + event.getPlayer().getDisplayName() + " §7left the game!");
         
         PlayerState player = MatchMaker.getPlayerState(event.getPlayer().getUniqueId());
         if (player == null || player.getCurrentMatch() == null) return;
