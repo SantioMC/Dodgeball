@@ -65,7 +65,7 @@ public class PlayerListener implements Listener {
         event.setQuitMessage(event.getPlayer().getDisplayName() + " §7left the game!");
         
         PlayerState player = MatchMaker.getPlayerState(event.getPlayer().getUniqueId());
-        if (player == null) return;
+        if (player == null || player.getCurrentMatch() == null) return;
         
         player.getCurrentMatch().eliminate(player.getUniqueId(), EliminationReason.DISCONNECT);
         
